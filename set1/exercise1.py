@@ -8,3 +8,5 @@ https://design-computing.github.io/md/week1
 
 """
 print("hello world!")
+print("test number 2")
+print("test 3")
