@@ -13,13 +13,17 @@ print("hello! Let's get started")  # it printed "hello! Let's get started"
 
 some_words = ['what', 'does', 'this', 'line', 'do', '?']
 
+#I think it will print one of the 5 words... not the questionmark.
 for word in some_words:
     print(word)
-
+#It printed every word one by one
+#It will print a random words in "some_words"
 for x in some_words:
     print(x)
-
+#it printed every words, but not in a row
+#it will print all the words in a row " what does this line do ?"
 print(some_words)
+# it printed "[what, does, this, line, do, ?]"
 
 if len(some_words) > 3:
     print('some_words contains more than 3 words')
