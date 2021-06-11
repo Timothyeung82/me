@@ -24,16 +24,19 @@ for x in some_words:
 #it will print all the words in a row " what does this line do ?"
 print(some_words)
 # it printed "[what, does, this, line, do, ?]"
-
+# it will print 'some_words contains more than 3 words' because there is more then 3 words in 'some_words"
 if len(some_words) > 3:
     print('some_words contains more than 3 words')
-
+# it printed 'some_words contains more than 3 words'
+#
 def usefulFunction():
     """
     You may want to look up what uname does before you guess
     what the line below does:
     https://docs.python.org/3/library/platform.html#platform.uname
     """
+    #it will print my computer's stat.. eg systems amd processor
     print(platform.uname())
+    # it printed my system info
 
 usefulFunction()
