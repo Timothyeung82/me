@@ -212,12 +212,11 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    stair =[]
-
+    stair = []
     for i in range(10):
-        steps =[]
+        steps = []
         for j in range(i+1):
-            steps.append(j)
+            steps.append(str(j))
         stair.append(steps)
     print(stair)
     return stair
@@ -244,7 +243,17 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramid = []
+    for i in range(5):
+        stars = []
+        for j in range(9):
+            if j < 4-i or j>4+i:
+                stars.append(" ")
+            else:
+                stars.append("*")
+        pyramid.append(stars)
+    print(pyramid)
+    return pyramid
 
 
 def little_printer(some_kind_of_list, exercise_name):
