@@ -112,6 +112,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
+    number_list = []
+    for i in range(10):
+        number = []
+        for j in range(10):
+            number.append(str(i))
+        number_list.append(number)
+    print(number_list)
+    return number_list
+
     return None
 
 
@@ -132,6 +141,16 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
+    number_block = []
+    
+    for i in range(10):
+        number = []
+        for j in range(10):
+            number.append(str(j))
+        number_block.append(number)
+    print(number_block)
+    return number_block
+
     return None
 
 
@@ -159,6 +178,17 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
+
+    coords_list = []
+    for i in range(10):
+        coords = []
+        for j in range(5):
+            coords.append("(i" + str(i)+ ", " + "j" + str(j) + ")")
+            #or it can be coords.append('(i{}, j{})'.format(i, j))
+        coords_list.append(coords)
+    print(coords_list)
+    return coords_list
+
     return None
 
 
