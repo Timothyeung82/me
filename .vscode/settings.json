@@ -1,4 +1,4 @@
 {
     "python.formatting.provider": "black",
-    "python.pythonPath": "C:\\Users\\Tim\\AppData\\Local\\Microsoft\\WindowsApps\\python3.9.exe"
+    "python.pythonPath": "C:\\Users\\Tim\\anaconda3\\python.exe"
 }
