@@ -51,14 +51,18 @@ def loops_1a():
     return star
 
 
-def loops_1c(number_of_items=5, symbol="#"):
+def loops_1c(number_of_items = 5, symbol = "#"):
     """Respond to variables.
 
     Using any method, return a list of number_of_items items, each one a
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    a_list = []
+    for i in range(number_of_items):
+        a_list.append(symbol)
+    print(a_list)
+    return a_list
 
 
 def loops_2():
@@ -79,7 +83,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    stars_field = []
+    for i in range(10):
+        stars = []
+        for j in range(10):
+            stars.append('*')
+        stars_field.append(stars)
+    return stars_field
 
 
 def loops_3():
