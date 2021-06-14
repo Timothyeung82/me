@@ -26,13 +26,12 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
-
-    if moves and not should_move:
+    if moves and should_move or not moves and not should_move:
+        return "No Problem"
+    elif moves and not should_move:
         return "Duct Tape"
     elif not moves and should_move:
         return "WD-40"
-    elif moves and should_move or not moves and not should_move:
-        return "No Problem"
     return None
 
 
