@@ -212,7 +212,15 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    stair =[]
+
+    for i in range(10):
+        steps =[]
+        for j in range(i+1):
+            steps.append(j)
+        stair.append(steps)
+    print(stair)
+    return stair
 
 
 def loops_7():
