@@ -12,7 +12,11 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+    Never_ending_loop = []
+    for i in range(start, stop, step):
+        Never_ending_loop.append(i)
+    print(Never_ending_loop)
+    return Never_ending_loop
 
 
 def lone_ranger(start, stop, step):
@@ -20,7 +24,11 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    the_range = []
+    for i in range(start, stop, step):
+        the_range.append(i)
+    print(the_range)
+    return the_range
 
 
 def two_step_ranger(start, stop):
@@ -29,7 +37,11 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    range_2 = []
+    for i in range(start, stop, 2):
+        range_2.append(i)
+    print(range_2)
+    return range_2
 
 
 def stubborn_asker(low, high):
@@ -40,7 +52,13 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+    i = input(f"enter a number between {low} and {high}")
+    while i < low or i > high:
+        print(f"{i} is not the right number")
+        i += 10
+    else:    
+        print(f"{i} is an ok number")
+    return i
 
 
 def not_number_rejector(message):
@@ -50,7 +68,17 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    while True:
+        x = input(message)
+        try:
+            x / 2 
+            print(f"{x} is a number")
+            return x
+        except:
+            print("not a number")
+
+    
+
 
 
 def super_asker(low, high):
@@ -61,7 +89,18 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    while True:
+        i= input()
+        try:
+            i / 2
+            stubborn_asker(low, high)
+            return i
+        except:
+            print("didnt work")
+   
+     
+    
+   
 
 
 if __name__ == "__main__":
