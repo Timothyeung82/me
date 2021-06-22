@@ -10,7 +10,7 @@ import math
 def binary_search(low, high, actual_number):
     """Do a binary search.
 
-    This is going to be your first 'algorithm' in the usual sense of the word!
+    This is going to be your first 'algorithm' in the usual sense of the world!
     you'll give it a range to guess inside, and then use binary search to home
     in on the actual_number.
     
