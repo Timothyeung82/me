@@ -3,7 +3,6 @@
 
 
 import math
-
 # import time
 
 
@@ -27,7 +26,47 @@ def binary_search(low, high, actual_number):
     tries = 0
     guess = 0
 
-    # Write your code in here
+    correct_anwser = False
+    
+    while not correct_anwser:
+        middle_number = (high + low) / 2
+        remainder = middle_number - int(middle_number)
+        if remainder > 0.5:
+            middle_number = int(middle_number) + 1
+        else:
+            middle_number = int(middle_number)
+        guess_input = middle_number
+        if guess_input == actual_number:
+            print(f"You got it!")
+            tries += 1
+            guess = actual_number
+            print(f"tries = {tries}")
+            print(f"guess = {guess}")
+            correct_anwser = True
+        elif guess_input < actual_number:
+            guess = guess_input
+            tries += 1
+            print(f"tries = {tries}")
+            print(f"guess = {guess}")
+            if guess_input + 1 == actual_number:
+                print(f"re-adjusted guess = {guess_input+1}")
+                correct_anwser = True
+            elif guess_input - 1 == actual_number:
+                print(f"re-adjusted guess = {guess_input-1}")
+                correct_anwser = True
+            low = guess_input 
+        elif guess_input > actual_number:
+            guess = guess_input
+            tries += 1
+            print(f"tries = {tries}")
+            print(f"guess = {guess}")
+            if guess_input + 1 == actual_number:
+                print(f"re-adjusted guess = {guess_input + 1}")
+                correct_anwser = True
+            elif guess_input - 1 == actual_number:
+                print(f"re-adjusted guess = {guess_input -1 }")
+                correct_anwser = True
+            high = guess_input 
 
     return {"guess": guess, "tries": tries}
 
