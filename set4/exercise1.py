@@ -7,6 +7,8 @@ import requests
 import inspect
 import sys
 
+from requests.models import Response
+
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
 CWD = os.getcwd()  # The curent working directory
@@ -34,9 +36,16 @@ def get_some_details():
          dictionaries.
     """
     json_data = open(LOCAL + "/lazyduck.json").read()
-
+    
     data = json.loads(json_data)
-    return {"lastName": None, "password": None, "postcodePlusID": None}
+    last_name = data["results"][0]["name"]["last"]
+    passwood = data["results"][0]["login"]["password"]
+    postcode = data["results"][0]["location"]["postcode"]
+    name_id = data["results"][0]["id"]["value"]
+    postid = int(postcode) + int(name_id)
+    print(data)
+    print(last_name, passwood, postid)
+    return {"lastName": last_name, "password": passwood, "postcodePlusID": postid}
 
 
 def wordy_pyramid():
@@ -73,6 +82,17 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+    pyramid = []
+    for n in range(3, 20, 2):
+        Response = requests.get('https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength='+ str(n)) 
+        #print(Response.text)
+        pyramid.append(Response.text)
+    for n in range(20, 3, -2):
+        Response = requests.get(f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={str(n)}") 
+        #print(Response.text)
+        pyramid.append(Response.text)
+    return pyramid
+
     pass
 
 
@@ -91,12 +111,22 @@ def pokedex(low=1, high=5):
          variable and then future access will be easier.
     """
     template = "https://pokeapi.co/api/v2/pokemon/{id}"
+    maxheight=0
 
-    url = template.format(id=5)
-    r = requests.get(url)
-    if r.status_code is 200:
-        the_json = json.loads(r.text)
-    return {"name": None, "weight": None, "height": None}
+    
+    for n in range(low, high):
+        url = template.format(id=n)
+        r = requests.get(url)
+        if r.status_code is 200:
+            the_json = json.loads(r.text)
+            height = the_json["height"]
+            if maxheight < height:
+                maxheight = the_json["height"]
+                name = the_json["name"]
+                weight = the_json["weight"]
+    print(f"'name': {name}, 'weight': {weight}, 'height': {maxheight}")
+
+    return {'name': name, 'weight': weight, 'height': maxheight}
 
 
 def diarist():
