@@ -143,6 +143,21 @@ def diarist():
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
+    
+    mode = "r"
+    code_doc = "set4/Trispokedovetiles(laser).gcode"
+    g_code = open(code_doc, mode)
+    read_code = g_code.read()
+    print(read_code)
+    m_code_count = read_code.count("M10 P1")
+    g_code.close()
+    print(m_code_count)
+    pew = open("laser.pew", "w")
+    pew.write(str(m_code_count))
+    pew.close()
+
+    return diarist
+
     pass
 
 
