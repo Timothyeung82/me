@@ -152,7 +152,7 @@ def diarist():
     m_code_count = read_code.count("M10 P1")
     g_code.close()
     print(m_code_count)
-    pew = open("laser.pew", "w")
+    pew = open("set4/lasers.pew", "w")
     pew.write(str(m_code_count))
     pew.close()
 
