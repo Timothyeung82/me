@@ -144,6 +144,8 @@ def diarist():
     TIP: this might come in handy if you need to hack a 3d print file in the future.
     """
     
+    """
+    My old way of doing it:
     mode = "r"
     code_doc = "set4/Trispokedovetiles(laser).gcode"
     g_code = open(code_doc, mode)
@@ -155,8 +157,13 @@ def diarist():
     pew = open("set4/lasers.pew", "w")
     pew.write(str(m_code_count))
     pew.close()
+    """
+    with open("set4/Trispokedovetiles(laser).gcode", "r") as g_code:
+        m_code_count = g_code.read().count("M10 P1")
+    
+    with open("set4/lasers.pew", "w") as pew:
+        pew.write(str(m_code_count))
 
-    return None
 
     pass
 

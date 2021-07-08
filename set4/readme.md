@@ -1,4 +1,8 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+
+
+another way i try to do pokedex
+
 def pokedex(low=1, high=5):
     """ Return the name, height and weight of the tallest pokemon in the range low to high.
 
@@ -32,3 +36,15 @@ def pokedex(low=1, high=5):
     print(pokemon_height)
 
     return pokemon_height[-1]
+
+
+
+--------------------------------------------------------------------------
+
+learn a quicker and shorter way of doing pew
+
+    with open("set4/Trispokedovetiles(laser).gcode", "r") as g_code:
+        m_code_count = g_code.read().count("M10 P1")
+    
+    with open("set4/lasers.pew", "w") as pew:
+        pew.write(str(m_code_count))
