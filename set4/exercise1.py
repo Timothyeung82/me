@@ -156,7 +156,7 @@ def diarist():
     pew.write(str(m_code_count))
     pew.close()
 
-    return diarist
+    return None
 
     pass
 
