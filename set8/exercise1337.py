@@ -7,6 +7,7 @@ You have 2 hours.
 """
 import json
 import os
+from posixpath import join
 import random
 import string
 import time
@@ -271,9 +272,26 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
+    if os.path.exists(fname):
+        with open(fname, "r") as dict:
+            dict_filler = json.load(dict)
+        print(dict)
+    else:
+        dict_filler = make_filler_text_dictionary()
+        with open(fname, "w") as dict:
+            json.dump(dict_filler, dict)
+        print(dict)
     
+    words = []
+    for x in range(number_of_words):
+        length = random.randint(3,7)
+        key = random.randint(0,3)
+        words.append(dict_filler[str(length)][key])
+    join_word = " ".join(words)
+    join_word =f"{join_word[0].upper()}{join_word[1:]}"
 
-    return None
+
+    return f"{join_word}."
 
 
 if __name__ == "__main__":
