@@ -224,7 +224,7 @@ def make_filler_text_dictionary() -> Dict:
     wd = {}
     for i in range(3,8):
         wd[i] = []
-        for _ in range(4):
+        for x in range(4):
             Response = requests.get(f"{url}{str(i)}")
             wd[i].append(Response.text)
 
@@ -246,6 +246,10 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+    for _ in range(number_of_words):
+        length = random.randint(3,7)
+        key = random.randint(0,3)
+        words.append(my_dict[length][key])
    
 
     return " ".join(words)
@@ -267,6 +271,7 @@ def fast_filler(number_of_words=200) -> str:
     """
 
     fname = "dict_cache.json"
+    
 
     return None
 
